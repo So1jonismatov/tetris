@@ -3,7 +3,7 @@
 
 
 bool Game::IsBlockOutside(){
-    std::vector<Position> tiles = currentBlock.GetCellPositons();
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
     for(Position item : tiles){
         if(grid.IsCellOutside(item.row, item.column)){
             return true;
@@ -23,7 +23,7 @@ void Game::RotateBlock(){
 }
 
 void Game::LockBlock(){
-    std::vector<Position> tiles = currentBlock.GetCellPositons();
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
     for(Position item : tiles){
         grid.grid[item.row][item.column] = currentBlock.id;
     }
@@ -41,7 +41,7 @@ void Game::LockBlock(){
 }
 
 bool Game::IsBlockFits(){
-    std::vector<Position> tiles = currentBlock.GetCellPositons();
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
     for(Position item : tiles)
         if(grid.IsCellEmpty(item.row, item.column) == false)
             return false;
